@@ -1,0 +1,29 @@
+[project]
+name = "local-analyst-backend"
+version = "0.1.0"
+description = "Small local-first AI data analyst backend"
+requires-python = ">=3.11"
+dependencies = [
+  "duckdb>=1.2,<2",
+  "fastapi>=0.115,<1",
+  "httpx>=0.28,<1",
+  "pydantic>=2.10,<3",
+  "pydantic-settings>=2.7,<3",
+  "python-multipart>=0.0.20,<1",
+  "sqlglot>=26,<29",
+  "uvicorn[standard]>=0.34,<1",
+  "pandas>=2.2,<3",
+  "scikit-learn>=1.5,<2",
+  "joblib>=1.4,<2",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "pytest-asyncio>=0.25,<2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
